@@ -9,7 +9,6 @@ intents.voice_states = True
 
 bot = commands.Bot(command_prefix=Config.PREFIX, intents=intents)
 
-
 @bot.event
 async def on_ready():
     print(f"Conectado como {bot.user} ({bot.user.id})")
@@ -20,11 +19,9 @@ async def on_ready():
         )
     )
 
-
 async def setup_hook():
     for cog in ["cogs.help", "cogs.voicemaster"]:
         await bot.load_extension(cog)
-
 
 bot.setup_hook = setup_hook
 bot.run(Config.TOKEN)
