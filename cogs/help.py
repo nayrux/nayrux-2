@@ -9,7 +9,7 @@ class Help(commands.Cog):
         self.bot = bot
 
     @commands.hybrid_command(name="help", description="Show help menu")
-    async def help(self, ctx, category: str = None):
+    async def help_menu(self, ctx, category: str = None):
         if category:
             await ctx.send(f"Help for {category}")
             return
